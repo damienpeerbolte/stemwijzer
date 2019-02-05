@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Stemwijzer</title>
+        <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+        <main>
+            <div id="startPage">
+                <!-- Start firstPart -->
+                <div class="firstPart">
+                    <img class="logo" src="assets/img/logo-stemwijzer.svg" alt="logo">
+                    <h5>StemWijzer Tweede Kamer 2017</h5><br>
+                    <h4 style="color:#01B4DC;">Test uw politieke voorkeur aan de hand van 30 stellingen</h4>
+                    <div class="infoDiv">
+                        <i class="fas fa-universal-access"></i>
+                        <p>Bekijk de toegankelijke versie voor mensen met een visuele beperking</p>
+                    </div>
+                    <div class="infoDiv">
+                        <i class="fas fa-lock"></i>
+                        <p>De StemWijzer maakt geen gebruik van cookies. Klik hier voor de volledige privacy statement</p>
+                    </div>
+                    <button class="startButton" type="button" name="button" onclick="toQuiz()">Start</button>
+                </div>
+                <!-- End firstPart -->
+                <hr />
+                <!-- Start secondPart -->
+                <div class="secondPart">
+                    <h4>Of blik terug met de <span style="color:#888;">Stemmen</span>Tracker</h4><br>
+                    <p>Wat hebben de partijen in het verleden waargemaakt van hun verkiezingsbeloften? 'Track' uw stem met de Stemmentracker, een website die terugblikt op 30 Tweede Kamerstemmingen van de afgelopen regeerperiode. Met welke partij stemde u mee?</p>
+                </div>
+                <!-- End secondPart -->
+                <!-- Start thirdPart -->
+                <div class="thirdPart">
+                    <img class="logo1v" src="assets/img/logo-1v.svg" alt="logo-1v">
+                    <p>Deze partijen doen mee</p>
+                    <div class="partijen">
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                    </div>
+                    <p>Deze partijen doen niet mee</p>
+                    <div class="partijen">
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                        <div><i class="fab fa-apple"></i></div>
+                        <div><i class="fab fa-android"></i></div>
+                    </div>
+                </div>
+                <!-- End thirdPart -->
+            </div>
+            <div id="quizPage">
+                <p>quizquestions</p>
+            </div>
+        </main>
+        <script src="assets/js/script.js"></script>
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
+    </body>
+</html>

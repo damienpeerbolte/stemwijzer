@@ -1,0 +1,122 @@
+body {
+    background-image: url('../img/background-1024.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+}
+
+main {
+    background-color: white;
+    width: 85vw;
+    height: 100vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+img.logo {
+    width: 28%;
+    margin-top: 11vh;
+}
+
+div.firstPart {
+    padding-left: 8vw;
+    background-color: white;
+}
+
+div.firstPart h5 {
+    font-weight:bold;
+}
+
+div.firstPart h4 {
+    margin-bottom: 50px;
+}
+
+hr {
+    border-top: 2px dotted #999 !important;
+    margin-bottom: 50px !important;
+}
+
+div.firstPart i {
+    font-size: 40px;
+    color: #01B4DC;
+}
+
+div.infoDiv {
+    width: 25vw;
+    margin-bottom: 30px;
+}
+
+div.infoDiv i {
+    float: left;
+}
+
+div.infoDiv p {
+    margin-left: 5vw;
+}
+
+button.startButton {
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 60px;
+    font-size: 26px;
+    font-weight: bold;
+    position: absolute;
+    right: 15vw;
+    top: 45%;
+}
+
+div.secondPart {
+    padding-left: 7vw;
+    padding-right: 7vw;
+    background-color: white;
+}
+
+div.secondPart h4 {
+    color: #444;
+    width: 410px;
+}
+
+div.secondPart h4:hover {
+    border-bottom: 3px solid #444;
+}
+
+div.thirdPart {
+    background-color: #01B4DC;
+    padding: 7vh 8vw 0vh 8vw;
+    margin-bottom: 14vh;
+}
+
+div.thirdPart p {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+img.logo1v {
+    width: 13vw;
+    margin-bottom: 40px;
+}
+
+div.partijen div {
+    background-color: white !important;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 50%;
+    transition: transform .2s;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5vh;
+}
+
+div.partijen div:hover {
+    transform: scale(1.8);
+    -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
+}
