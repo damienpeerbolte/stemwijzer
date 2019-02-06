@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
     </head>
     <body>
         <main>
@@ -59,10 +60,13 @@
                 <!-- End thirdPart -->
             </div>
             <div id="quizPage">
-                <p>quizquestions</p>
+                <h4 id="questionTitle"></h4>
+                <p id="question"></p>
+                <button type="button" name="button" onclick="nextQuestion()">Eens</button>
+                <button type="button" name="button" onclick="nextQuestion()">Geen van beide</button>
+                <button type="button" name="button" onclick="nextQuestion()">Oneens</button>
             </div>
         </main>
         <script src="assets/js/script.js"></script>
-        <script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
     </body>
 </html>
