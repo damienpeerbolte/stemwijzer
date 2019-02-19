@@ -175,7 +175,7 @@ button.answerButton:hover, button.startButton:hover {
     font-weight: 400;
 }
 
-#quizPage, #importantQuestion {
+#quizPage, #importantQuestion, #chooseParties, #resultPage {
     padding: 14vh 9vw;
 }
 

@@ -71,13 +71,20 @@
             <div style="display:none;" id="importantQuestion">
                 <button class="back" type="button" name="button" onclick="impBack()"><i class="fas fa-arrow-left"></i></button>
                 <h2 id="questionTitle">Zijn er onderwerpen die u extra belangrijk vindt?</h2><br>
-                <h5>Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.</h5>
+                <h5>Aangevinkte stellingen tellen extra mee bij het berekenen van het resultaat.</h5>
                 <div id="importantTitles"></div>
                 <button class="answerButton" id="toParties" type="button" name="button" onclick="toParties()">Volgende</button>
             </div>
             <div style="display:none;" id="chooseParties">
-                <button class="back" type="button" name="button" onclick="partBack()"><i class="fas fa-arrow-left"></i></button>
-                <h2>Choose ya parties biatch</h2>
+                <button class="back" type="button" name="button" onclick=""><i class="fas fa-arrow-left"></i></button>
+                <h2 id="questionTitle">Choose which parties you want to include in your result.</h2>
+                <div id="parties"></div>
+                <button class="answerButton" id="calculate" type="button" name="button" onclick="calculate()">Resultaat</button>
+            </div>
+            <div style="display:none;" id="resultPage">
+                <button class="back" type="button" name="button" onclick=""><i class="fas fa-arrow-left"></i></button>
+                <h2 id="questionTitle">Dit is uw resultaat:</h2>
+                <div id="result"></div>
             </div>
         </main>
         <script src="assets/js/script.js"></script>

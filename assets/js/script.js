@@ -4,6 +4,7 @@ const quizTitle = document.getElementById('questionTitle');
 const question = document.getElementById('question');
 const impQuestion = document.getElementById('importantQuestion');
 const partiesPage = document.getElementById('chooseParties');
+const resultPage = document.getElementById('resultPage');
 
 var answers = [];
 var index = 0;
@@ -11,6 +12,8 @@ var eens = document.getElementById('agree');
 var oneens = document.getElementById('disagree');
 var neither = document.getElementById('neither');
 var impTitleList = document.getElementById('importantTitles');
+var partiesList = document.getElementById('parties');
+var finalResult = document.getElementById('result');
 
 // this is basicly the index page
 function startPage() {
@@ -58,7 +61,8 @@ function nextQuestion(value) {
         "title": subjects[index].title,
         "statement": subjects[index].statement,
         "answer": value,
-        "priority": 0
+        "priority": 0,
+        "parties": getPartiesWithSameAnswer(value)
     };
 
     // set the current answer equal to the variable answer
@@ -78,19 +82,86 @@ function nextQuestion(value) {
     }
 }
 
+function getPartiesWithSameAnswer(value) {
+    var result = [];
+    var partyList = subjects[index].parties;
+
+    if (value == "Eens") {
+        value = "pro";
+    } else if (value == "Oneens") {
+        value = "contra";
+    } else if (value == "Geen van beide") {
+        value = "ambivalent";
+    }
+
+    for (var i = 0; i < partyList.length; i++) {
+        if (value == partyList[i].position) {
+            result.push(partyList[i].name);
+        }
+    }
+
+    return result;
+}
+
 // the page where you choose which parties you want and which you don't want
 function toParties() {
     impQuestion.style.display = "none";
     partiesPage.style.display = "block";
+    // checkboxes on page
     const checkbox = document.getElementsByClassName('check');
+    // loop through all the question titles
     for (var i = 0; i < answers.length; i++) {
+        // check all of the title if a checkbox is checked...
         if (checkbox[i].checked == true){
-            console.log("True");
+            // ...if yes, set priority on 1...
             answers[i].priority = 1;
         } else {
-            console.log("False");
+            // ...if no, set priority on 0
             answers[i].priority = 0;
         }
+    }
+    // Loop through parties
+    for (var i = 0; i < parties.length; i++) {
+        partiesList.innerHTML += '<input class="checkParty" type="checkbox"> ' + parties[i].name + '<br />';
+    }
+}
+
+function calculate() {
+    partiesPage.style.display = "none";
+    resultPage.style.display = "block";
+
+    var checkedParties = [];
+    const checkParty = document.getElementsByClassName('checkParty');
+    // Loop through parties
+    for (var i = 0; i < parties.length; i++) {
+        // Check if there are any checked parties
+        if (checkParty[i].checked == true){
+            // Push checked parties to array "checkedParties"
+            checkedParties.push(parties[i]);
+
+            checkedParties[checkedParties.length-1].score = 0;
+        }
+    }
+
+    for (var i = 0; i < answers.length; i++) {
+        var answer = answers[i];
+        for (var z = 0; z < answer.parties.length; z++) {
+            var party = answers[i].parties[z];
+            for (var r = 0; r < checkedParties.length; r++) {
+                if (checkedParties[r].name == party.name) {
+                    checkedParties.score++;
+                    if (answer.priority == 1) {
+                        checkedParties.score++;
+                    }
+                }
+            }
+        }
+    }
+
+    checkedParties.sort(function(a, b){return b.score - a.score});
+    console.log(checkedParties);
+    for (var i = 0; i < checkedParties.length; i++) {
+        finalResult.innerHTML = checkedParties[i].name + "<br />";
     }
 }
 
