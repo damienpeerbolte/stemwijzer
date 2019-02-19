@@ -15,6 +15,11 @@ main {
     margin-bottom: 5vh;
 }
 
+button, img {
+    user-select: none;
+    outline: none !important;
+}
+
 img.logo {
     width: 28%;
     margin-top: 11vh;
@@ -119,4 +124,97 @@ div.partijen div:hover {
     -webkit-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.75);
+}
+
+button.answerButton:not(.neither) {
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    width: 180px;
+}
+
+button.answerButton:not(.disagree) {
+    margin-right: 5px;
+}
+
+button.neither {
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+    width: 220px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button.answerButton, button.startButton {
+    transition-duration: .2s;
+}
+
+button.answerButton {
+    margin-top: 15vh;
+}
+
+button.answerButton:hover, button.startButton:hover {
+    background-color: #01B4DC;
+    transition-duration: .2s;
+}
+
+
+#questionTitle {
+    color: #01B4DC;
+    font-weight: bold;
+}
+
+#question {
+    font-weight: 400;
+}
+
+#quizPage, #importantQuestion {
+    padding: 14vh 9vw;
+}
+
+button.back {
+    background-color: #e7eaeb;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    position: absolute;
+    top: 8vh;
+    left: 8vw;
+    transition-duration: .15s;
+}
+
+button.back:hover {
+    left: 7.7vw;
+    transition-duration: .15s;
+}
+
+button.skip {
+    color: #A8A8A8;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    margin-left: 2.5vw;
+    cursor: pointer;
+}
+
+button.skip:hover > i {
+    margin-left: .5vw;
+    transition-duration: .15s;
+}
+
+button.skip i {
+    transition-duration: .15s;
+}
+
+.active {
+    background-color: #01B4DC !important;
 }

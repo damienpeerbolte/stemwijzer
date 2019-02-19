@@ -2,7 +2,7 @@
 <html lang="nl" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Stemwijzer</title>
+        <title>StemWijzer Tweede Kamer 2017</title>
         <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -59,12 +59,25 @@
                 </div>
                 <!-- End thirdPart -->
             </div>
-            <div id="quizPage">
-                <h4 id="questionTitle"></h4>
-                <p id="question"></p>
-                <button type="button" name="button" onclick="nextQuestion()">Eens</button>
-                <button type="button" name="button" onclick="nextQuestion()">Geen van beide</button>
-                <button type="button" name="button" onclick="nextQuestion()">Oneens</button>
+            <div style="display:none;" id="quizPage">
+                <button class="back" type="button" name="button" onclick="prevQuestion()"><i class="fas fa-arrow-left"></i></button>
+                <h2 id="questionTitle"></h2><br>
+                <h2 id="question"></h2>
+                <button class="answerButton" id="agree" type="button" name="button" onclick="nextQuestion('Eens')">Eens</button>
+                <button class="answerButton" id="neither" type="button" name="button" onclick="nextQuestion('Geen van beide')">Geen van beide</button>
+                <button class="answerButton" id="disagree" type="button" name="button" onclick="nextQuestion('Oneens')">Oneens</button>
+                <button class="skip" type="button" name="button" onclick="nextQuestion('')">Sla deze vraag over <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div style="display:none;" id="importantQuestion">
+                <button class="back" type="button" name="button" onclick="impBack()"><i class="fas fa-arrow-left"></i></button>
+                <h2 id="questionTitle">Zijn er onderwerpen die u extra belangrijk vindt?</h2><br>
+                <h5>Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.</h5>
+                <div id="importantTitles"></div>
+                <button class="answerButton" id="toParties" type="button" name="button" onclick="toParties()">Volgende</button>
+            </div>
+            <div style="display:none;" id="chooseParties">
+                <button class="back" type="button" name="button" onclick="partBack()"><i class="fas fa-arrow-left"></i></button>
+                <h2>Choose ya parties biatch</h2>
             </div>
         </main>
         <script src="assets/js/script.js"></script>
