@@ -77,6 +77,7 @@ function nextQuestion(value) {
             impTitleList.innerHTML += '<input class="check" type="checkbox"> ' + subjects[i].title + '<br />';
         }
     } else {
+        // index + 1
         index++;
         showQuestion();
     }
@@ -86,20 +87,29 @@ function getPartiesWithSameAnswer(value) {
     var result = [];
     var partyList = subjects[index].parties;
 
+    // Check if agreed with the question
     if (value == "Eens") {
+        // Convert it to 'pro'
         value = "pro";
+        // Check if disagreed with the question
     } else if (value == "Oneens") {
+        // Convert it to 'contra'
         value = "contra";
+        // Check if not agreed/disagreed with the question
     } else if (value == "Geen van beide") {
+        // Convert it to 'ambivalent'
         value = "ambivalent";
     }
 
+    // Loop through partyList
     for (var i = 0; i < partyList.length; i++) {
         if (value == partyList[i].position) {
+            // Push the partyList to result
             result.push(partyList[i].name);
         }
     }
 
+    // return the result
     return result;
 }
 
@@ -122,6 +132,7 @@ function toParties() {
     }
     // Loop through parties
     for (var i = 0; i < parties.length; i++) {
+        // Generate checkboxes + the party names
         partiesList.innerHTML += '<input class="checkParty" type="checkbox"> ' + parties[i].name + '<br />';
     }
 }
@@ -139,18 +150,26 @@ function calculate() {
             // Push checked parties to array "checkedParties"
             checkedParties.push(parties[i]);
 
+            // Set the last item of checkedParties[checkedParties].score equal to 0
             checkedParties[checkedParties.length-1].score = 0;
         }
     }
 
+    // Loop through answers
     for (var i = 0; i < answers.length; i++) {
         var answer = answers[i];
+        // Loop through answer.parties
         for (var z = 0; z < answer.parties.length; z++) {
             var party = answers[i].parties[z];
+            // Loop through checkedParties
             for (var r = 0; r < checkedParties.length; r++) {
+                // Check if checkedParty is equal to party.name
                 if (checkedParties[r].name == party.name) {
+                    // Add 1 to checkedParties.score
                     checkedParties.score++;
+                    // Check if answer.priority is equal to 1
                     if (answer.priority == 1) {
+                        // Add 1 to checkedParties.score
                         checkedParties.score++;
                     }
                 }
@@ -158,9 +177,11 @@ function calculate() {
         }
     }
 
+    // Sort checkedParties descending
     checkedParties.sort(function(a, b){return b.score - a.score});
-    console.log(checkedParties);
+    // Loop through checkedParties
     for (var i = 0; i < checkedParties.length; i++) {
+        // Put the final party in the finalResult
         finalResult.innerHTML = checkedParties[i].name + "<br />";
     }
 }
@@ -171,6 +192,7 @@ function prevQuestion() {
     if(index == 0) {
         startPage();
     } else {
+        // index - 1
         index--;
         showQuestion();
     }
