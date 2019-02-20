@@ -15,7 +15,7 @@ var impTitleList = document.getElementById('importantTitles');
 var partiesList = document.getElementById('parties');
 var finalResult = document.getElementById('result');
 
-// this is basicly the index page
+// this is basically the index page
 function startPage() {
     quizPage.style.display = "none";
     introScreen.style.display = "block";
@@ -57,6 +57,7 @@ function showQuestion() {
 }
 
 function nextQuestion(value) {
+    // Javascript object "answer"
     var answer = {
         "title": subjects[index].title,
         "statement": subjects[index].statement,
@@ -185,33 +186,44 @@ function calculate() {
         // Put the final party in the finalResult
         finalResult.innerHTML += checkedParties[i].name + " - " + checkedParties[i].score + " Punten" + "<br />";
     }
-
-    console.log(checkedParties);
 }
 
 function partySizeFilter() {
+    // Loop through parties
     for (var i = 0; i < parties.length; i++) {
+        // Current input
         const partyInput = document.getElementsByClassName('checkParty')[i];
+        // Set all checkboxes unchecked
         partyInput.checked = false;
+        // If current the current party's size is equal or bigger than 14...
         if(parties[i].size >= 14) {
+            // ...check the checkbox
             partyInput.checked = true;
         }
     }
 }
 
 function partySecularFilter() {
+    // Loop through parties
     for (var i = 0; i < parties.length; i++) {
+        // Current input
         const partyInput = document.getElementsByClassName('checkParty')[i];
+        // Set all checkboxes unchecked
         partyInput.checked = false;
+        // If current party is secular...
         if(parties[i].secular == true) {
+            // ...check the checkbox
             partyInput.checked = true;
         }
     }
 }
 
 function removeFilter() {
+    // Loop through parties
     for (var i = 0; i < parties.length; i++) {
+        // Current input
         const partyInput = document.getElementsByClassName('checkParty')[i];
+        // Set all checkboxes unchecked
         partyInput.checked = false;
     }
 }
@@ -234,13 +246,8 @@ function impBack() {
     quizScreen.style.display = "block";
 }
 
-// button to go back from the partiesPage to the
+// button to go back from the partiesPage to the importantQuestions
 function partBack() {
-    partiesPage.style.display = "none";
-    impQuestion.style.display = "block";
-}
-
-function partyBack() {
     partiesPage.style.display = "none";
     impQuestion.style.display = "block";
 }
