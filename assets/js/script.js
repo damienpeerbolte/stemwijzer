@@ -189,6 +189,33 @@ function calculate() {
     console.log(checkedParties);
 }
 
+function partySizeFilter() {
+    for (var i = 0; i < parties.length; i++) {
+        const partyInput = document.getElementsByClassName('checkParty')[i];
+        partyInput.checked = false;
+        if(parties[i].size >= 14) {
+            partyInput.checked = true;
+        }
+    }
+}
+
+function partySecularFilter() {
+    for (var i = 0; i < parties.length; i++) {
+        const partyInput = document.getElementsByClassName('checkParty')[i];
+        partyInput.checked = false;
+        if(parties[i].secular == true) {
+            partyInput.checked = true;
+        }
+    }
+}
+
+function removeFilter() {
+    for (var i = 0; i < parties.length; i++) {
+        const partyInput = document.getElementsByClassName('checkParty')[i];
+        partyInput.checked = false;
+    }
+}
+
 // button to go to previous question
 function prevQuestion() {
     // if first question
@@ -209,6 +236,11 @@ function impBack() {
 
 // button to go back from the partiesPage to the
 function partBack() {
+    partiesPage.style.display = "none";
+    impQuestion.style.display = "block";
+}
+
+function partyBack() {
     partiesPage.style.display = "none";
     impQuestion.style.display = "block";
 }
