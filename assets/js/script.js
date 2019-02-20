@@ -163,14 +163,15 @@ function calculate() {
             var party = answers[i].parties[z];
             // Loop through checkedParties
             for (var r = 0; r < checkedParties.length; r++) {
+                var checkedParty = checkedParties[r];
                 // Check if checkedParty is equal to party.name
-                if (checkedParties[r].name == party.name) {
+                if (checkedParty.name == party) {
                     // Add 1 to checkedParties.score
-                    checkedParties.score++;
+                    checkedParty.score++;
                     // Check if answer.priority is equal to 1
                     if (answer.priority == 1) {
                         // Add 1 to checkedParties.score
-                        checkedParties.score++;
+                        checkedParty.score++;
                     }
                 }
             }
@@ -182,8 +183,10 @@ function calculate() {
     // Loop through checkedParties
     for (var i = 0; i < checkedParties.length; i++) {
         // Put the final party in the finalResult
-        finalResult.innerHTML = checkedParties[i].name + "<br />";
+        finalResult.innerHTML += checkedParties[i].name + " - " + checkedParties[i].score + " Punten" + "<br />";
     }
+
+    console.log(checkedParties);
 }
 
 // button to go to previous question
