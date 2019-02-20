@@ -177,6 +177,7 @@ button.answerButton:hover, button.startButton:hover {
 
 #quizPage, #importantQuestion, #chooseParties, #resultPage {
     padding: 14vh 9vw;
+    background-color: white;
 }
 
 button.back {
